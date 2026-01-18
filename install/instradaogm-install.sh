@@ -27,7 +27,7 @@ cd /opt/instradaogm
 NEXTAUTH_SECRET=$(openssl rand -base64 32)
 BACKUP_SECRET=$(openssl rand -hex 32)
 export DATABASE_URL="file:/opt/instradaogm/data/db/instradaogm.db"
-cat <<EOF >.env
+cat <<EOF> .env
 # --- Required OPNsense Configuration ---
 OPNSENSE_URL=
 OPNSENSE_API_KEY=
@@ -72,7 +72,7 @@ unset NODE_OPTIONS
 msg_ok "Installed InstradaOGM"
 
 msg_info "Creating Service"
-cat <<EOF >/etc/systemd/system/instradaogm.service
+cat <<EOF> /etc/systemd/system/instradaogm.service
 [Unit]
 Description=InstradaOGM Service
 After=network.target

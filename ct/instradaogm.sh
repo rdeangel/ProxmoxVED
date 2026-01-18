@@ -48,7 +48,7 @@ function update_script() {
     rm -Rf /opt/data.backup
     rm /opt/.env
 
-    cat <<EOF >/etc/systemd/system/instradaogm.service
+    cat <<EOF> /etc/systemd/system/instradaogm.service
 [Unit]
 Description=InstradaOGM Service
 After=network.target
