@@ -66,9 +66,7 @@ Environment=PORT=3000
 [Install]
 WantedBy=multi-user.target
 EOF
-    $STD systemctl daemon-reload
-
-    cd /opt/instradaogm || exit
+    cd /opt/instradaogm
 
     export NODE_OPTIONS='--max-old-space-size=512'
     $STD npm run setup-dirs

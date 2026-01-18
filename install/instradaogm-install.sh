@@ -23,11 +23,11 @@ CLEAN_INSTALL=1 fetch_and_deploy_gh_release "instradaogm" "rdeangel/InstradaOGM"
 import_local_ip
 
 msg_info "Installing InstradaOGM"
-cd /opt/instradaogm || exit
+cd /opt/instradaogm
 NEXTAUTH_SECRET=$(openssl rand -base64 32)
 BACKUP_SECRET=$(openssl rand -hex 32)
 export DATABASE_URL="file:/opt/instradaogm/data/db/instradaogm.db"
-cat > .env <<EOF
+cat <<EOF >.env
 # --- Required OPNsense Configuration ---
 OPNSENSE_URL=
 OPNSENSE_API_KEY=
